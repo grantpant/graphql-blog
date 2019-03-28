@@ -52,7 +52,7 @@ const Query = {
   },
   me(parent, args, { prisma, request }, info) {
     const userId = verifyUser(request);
-    console.log(info.operation.selectionSet.selections[0].selectionSet.selections)
+
     return prisma.query.user({
       where: { id: userId }
     }, info);

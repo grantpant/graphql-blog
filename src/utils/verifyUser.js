@@ -20,7 +20,7 @@ const verifyUser = (request, requireAuth = true) => {
 
   if (headerToken) {
     const token = headerToken.replace("Bearer ", "");
-    const decoded = jwt.verify(token, "supersecretsecret");
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
     return decoded.userId;
   }
   // Unless verifyUser has false passed in to requireAuth,
