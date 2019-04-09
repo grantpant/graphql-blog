@@ -26,7 +26,7 @@ const verifyUser = (request, requireAuth = true) => {
   // Unless verifyUser has false passed in to requireAuth,
   // we'll throw the error.
   if (requireAuth) {
-    throw new Error("Authorization required");
+    throw new Error('Authorization required');
   }
   // If requireAuth is set to false, we'll have the function
   // return null. (See the post method in Query.js for explanation

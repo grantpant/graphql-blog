@@ -99,7 +99,7 @@ const Mutation = {
     // want to give them anthing specific--they're trying to do
     // something that they shouldn't be doing.)
     if (!postExists) {
-      throw new Error("Operation failed");
+      throw new Error('Operation failed');
     }
 
     return prisma.mutation.deletePost({
@@ -116,7 +116,7 @@ const Mutation = {
     });
     // Throw an AMBIGUOUS error if client doesn't own the post.
     if (!postExists) {
-      throw new Error("Operation failed");
+      throw new Error('Operation failed');
     }
     // Check if the post is currently publisihed.
     const isPublished = await prisma.exists.Post({
